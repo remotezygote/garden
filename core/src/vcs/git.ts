@@ -137,7 +137,7 @@ export class GitHandler extends VcsHandler {
         : flatten(
             await Promise.all(
               this.ignoreFiles.map((f) =>
-                git("ls-files", "--ignored", ...lsFilesCommonArgs, "--exclude-per-directory", f)
+                git("ls-files", "--ignored", "-c", ...lsFilesCommonArgs, "--exclude-per-directory", f)
               )
             )
           )

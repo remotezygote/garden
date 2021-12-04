@@ -263,7 +263,7 @@ export class Garden {
       throw new RuntimeError(`Unsupported platform: ${currentPlatform}`, { platform: currentPlatform })
     }
 
-    if (currentArch !== "x64") {
+    if (currentArch !== "x64" && currentArch !== "arm64") {
       throw new RuntimeError(`Unsupported CPU architecture: ${currentArch}`, { arch: currentArch })
     }
 
